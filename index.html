@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Kontur Task</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="script.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+	</head>
+	<body>
+		<div id="bodyCalc">
+			<div id="btnPanel">
+				<div class="control"  tabindex="0" id="multiplyMatrixBtn">
+					Умножить матрицы
+					<div></div>
+				</div>
+				<input id="cleaningBtn" class="control" type="button" value=" &#8630; Очистить матрицы">
+				<input id="swapMtxBtn" class="control"  type="button" value=" &#8645; Поменять матрицы местами">				
+				<input class="radio" type="radio" name="matrixRadio" id="matrixSwitchA" checked>
+				<label class="labelForRadio"  for="matrixSwitchA">					
+					<div class="control dotPlace">							
+					</div>
+					<div class="dot">					
+					</div>
+					Матрица А
+				</label>
+				<input class="radio" type="radio" name="matrixRadio" id="matrixSwitchB" >
+				<label class="labelForRadio" for="matrixSwitchB">			
+					<div class="control dotPlace">					
+					</div>
+					<div class="dot">						
+					</div>
+					Матрица В
+				</label>			
+				<div class="changeColumnBar">
+					<button class="control add"> &#10133; Добавить</button>
+					<button class="control dlt"> &#10134; Удалить</button>
+					<span>столбец</span>
+				</div>
+				<div class="changeStringBar">					
+					<button class="control add"> &#10133; Добавить</button>
+					<button class="control dlt"> &#10134; Удалить</button>
+					<span>строку</span>
+				</div>
+				<div id="error"></div>
+			</div>
+			<div id="mtxPanel">
+				<div id="boxMatrixC" >
+					<div class='leftSquareBracket'></div>
+					<div class='rightSquareBracket'></div>
+				</div>
+				<div id="boxMatrixA">
+					<div class='leftSquareBracket'></div>
+					<div class='rightSquareBracket'></div>
+				</div>
+				<div id="boxMatrixB">
+					<div class='leftSquareBracket'></div>
+					<div class='rightSquareBracket'></div>
+				</div>
+			</div>
+		</div>
+		 <script type="text/javascript">	
+			$(document).ready( function(){
+					init();
+				}
+			);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,310 @@
+﻿@font-face {
+    font-family: "Kontur";
+    src: url(shri.ttf);
+}
+body, html {
+	height: 100%;
+}
+/*Уберем внутреннюю рамку при табуляции*/
+button::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner{
+	border: none;
+}
+/*Для IE сделаем серым plaseholder*/
+input[placeholder]:-ms-input-placeholder {
+    color: #aaa;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font: 14px "Segoe UI";
+	color: #404040;
+	line-height: 20px;
+}
+#cleaningBtn, #swapMtxBtn {
+	display: block;
+}
+.control {
+	cursor: pointer;
+	border: 1px solid rgba(6,6,6, .4);
+	border-radius: 2px;
+	padding: 5px;
+	margin: 10px;
+	background: linear-gradient(to bottom, #fff, #eee);
+	outline: none;
+	background-origin: border-box; 
+}
+.control:hover {
+	background: #eee;
+}
+.control:focus {
+	box-shadow:  0 0 0 2px #4DA0FF;
+	border: 1px solid #fff;
+}
+.control:active{
+	background: #ccc;
+	outline: none;
+	border: 1px solid rgba(6, 6, 6, .4);
+	box-shadow: none;
+	border-top: 2px solid rgba(6, 6, 6, .4);
+	padding-bottom: 4px;
+}
+.cell, .cell:focus, .cell:active {
+	background: #fff;
+	border: 1px solid rgba(6, 6, 6, .3);
+	border-top: 1px solid rgba(6, 6, 6, .5) 
+}
+.cell:focus, .cell:active {
+	box-shadow:  0 0 0 2px #4DA0FF;
+	border: 1px solid rgba(6, 6, 6, 0);	
+}
+.cell{
+	width: 40px;
+	height: 40px;
+	margin: 5px;
+	padding: 2px;
+	text-align: center;
+}
+.disabled,.disabled:active{
+	color: #bbb;
+	background: #eee;
+	opacity: 0.9;
+	border: 1px solid rgba(6, 6, 6, .1);
+	box-shadow: none;
+}
+#bodyCalc {
+	width: 100%;
+	height: 100%;
+	min-width: 1000px;
+	position: relative;
+}
+#bodyCalc:after {
+	float: left;
+	clear: both;
+}
+#btnPanel, #mtxPanel {
+	float: left;/*
+	height: 100%;*/
+}
+#btnPanel {
+	width: 35%;
+	min-width: 30%;
+	min-height: 100%;
+	background: #aaa;
+	position: relative;
+	z-index: 1;
+}
+#mtxPanel {
+	width: 65%;
+	min-width: 470px;
+	max-width: 1000px;
+}
+#multiplyMatrixBtn {
+	padding: 0;
+	padding-bottom: 2px;
+	height: 33px;	
+	width: 175px; 
+	color: #fff;
+	border: 1px solid rgba(6,6,6, .2);
+	margin: 50px;	
+	border-radius: 4px 5px 5px 4px;
+	line-height: 35px;
+	position: relative;
+	border-right: 0px; 
+	text-align: center;
+	font-size: 15px;
+}
+#multiplyMatrixBtn::after, #multiplyMatrixBtn > div::after {
+	transform: rotateX(0deg) rotateY(55deg) rotateZ(-45deg);
+    position: absolute;
+    z-index: -1;
+}
+#multiplyMatrixBtn::after{
+    content:'';
+    left: 90.7%;
+    top: 11.0%;
+    border-bottom: 1px solid rgba(6,6,6, .2);
+    border-right: 1px solid rgba(6,6,6, .2);
+    width: 27px;
+    height: 27px;
+    border-radius: 0px 5px 3px 6px;   
+}
+#multiplyMatrixBtn:focus {
+	box-shadow: none;
+	border: 1px solid #fff;
+	border-right: 0; 
+}
+#multiplyMatrixBtn:focus::after {
+	border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+#multiplyMatrixBtn:active {
+	border: 1px solid rgba(6,6,6, .2);
+	border-top: 2px solid rgba(6,6,6, .2);
+	padding-bottom: 1px; 
+	border-right: 0;
+}
+#multiplyMatrixBtn:active::after {
+	border-bottom: 1px solid rgba(6,6,6, .2);
+	border-right: 1px solid rgba(6,6,6, .2);
+	top: 3px;
+}
+#multiplyMatrixBtn, #multiplyMatrixBtn::after {
+	background: #01CA0E;
+}
+#multiplyMatrixBtn:hover, #multiplyMatrixBtn:hover::after {
+	background: #01AF0E;
+}
+#multiplyMatrixBtn > div{
+	display: none;
+	height: 35px;
+	width: 100%;
+	top: -3px;
+	left: -3px;
+	padding: 3px;
+	padding-right: 0;
+	border-radius: 5px 5px 5px 5px; 
+}
+#multiplyMatrixBtn > div::after {
+	content:'';
+    left: 90.7%;
+    top: 12.5%;
+   	border-bottom: 3px solid #4DA0FF;  
+    border-right: 3px solid #4DA0FF;
+    width: 28px;
+    height: 28px;
+    border-radius: 0px 7px 3px 7px;  
+}
+#multiplyMatrixBtn > div, #multiplyMatrixBtn > div::after {
+	background: #4DA0FF;
+	position: absolute;
+	z-index: -1;
+}
+#multiplyMatrixBtn:focus > div {
+	display: block;
+}
+#multiplyMatrixBtn:active > div {
+	display: none;
+}
+#boxMatrixC, #boxMatrixA, #boxMatrixB{
+	position: relative;
+	float: left;
+	margin: 10px;
+	display: inline-block;
+	min-width: 90px;
+	min-height: 90px;
+	text-align: center;
+}
+#boxMatrixB{
+	clear: both;
+}
+#boxMatrixB span{
+	position: absolute;
+	bottom: -40px;
+	font-size: 30px;
+}
+#boxMatrixA span{
+	position: absolute;
+	right: -40px;
+	font-size: 30px;
+}
+.leftSquareBracket, .rightSquareBracket{
+	top: 0;
+	position: absolute;
+	width: 6px;
+	height: 100%;
+	border-top: 2px solid #111;
+	border-bottom: 2px solid #111; 
+}	
+.leftSquareBracket {
+	left: 0;
+	border-left: 2px solid #111; 
+}
+.rightSquareBracket {	
+	right: 0;
+	border-right: 2px solid #111;
+}
+#matrixSwitchA, #matrixSwitchB {
+	margin: 20px 5px;
+	cursor: pointer;
+}
+#matrixSwitchA, #error, .control, .changeColumnBar, .changeStringBar{
+	margin-left: 50px;
+}
+#error{
+	display: inline-block;
+	color: #f00;
+	width: 200px;
+	height: 200px;
+}
+.radio{
+	opacity: 0;
+}
+/*Рамка при фокусе radiobutton-а*/
+.focused:checked + .labelForRadio > .dotPlace {
+	box-shadow: 0 0 0 2px #4DA0FF;
+}
+.radio:checked {
+	outline: none;
+}
+.radio + label{
+	cursor: pointer;
+	left: -22px;
+}
+.radio + label{
+	position: relative;
+	padding: 0 0 0 20px;
+}
+/*Стили для точки radiobytton-а*/
+.dot{
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+}
+.dotPlace {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 14px;
+	height: 14px;
+	padding: 0;
+	margin: 0;
+	border-radius: 50%;	
+}
+.dotPlace:active {
+	border: 1px solid rgba(6,6,6, .4);
+	padding: 0;
+}
+.radio:checked + label > .dot {
+	background: #666;
+	z-index: 100;
+}
+.radio:hover + label > .dotPlace{
+	background: #eee;
+}
+.changeColumnBar, .changeStringBar {
+	position: relative;
+	float: left;
+	margin-bottom: 10px; 
+	display: block;
+}
+.changeColumnBar span, .changeStringBar span {
+	position: absolute;
+	margin-left: 10px;
+	top: 25%;
+	left: 100%;
+	display: block;
+}
+.add, .dlt {
+	float: left;
+	margin: 0;
+}
+.dlt {
+	margin-left: 30px;
+}
